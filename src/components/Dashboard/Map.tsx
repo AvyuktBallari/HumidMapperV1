@@ -58,7 +58,7 @@ export default function Map() {
                 .attr('cy', d => d[1])
                 .attr('r', 8)
                 .attr('fill', 'gray')
-                .on('mouseover', function(this: SVGCircleElement, event, d) {
+                .on('mouseover', function(this: SVGCircleElement, d) {
                     d3.select(this).attr('r', 10);
                     const [x, y, strength] = d;
                     svg.append('text')
