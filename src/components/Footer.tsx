@@ -14,7 +14,6 @@ const Footer = () => {
               <div className="text-xs text-gray-400 mt-2">All rights reserved</div>
             </div>
   
-            {/* Additional Links Section */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 items-start mt-10 md:mt-0">
               <div className="flex flex-col space-y-4">
                 <h5 className="text-sm font-semibold text-gray-300">Quick Links</h5>

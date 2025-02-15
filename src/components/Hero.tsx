@@ -11,14 +11,14 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Turn Humidity Data{" "}
+            Turn Humidity Data {" "}
             <RoughNotation
               animate={false}
               type="highlight"
               show={true}
               color="#d2cbc6"
             >
-              <span className="text-[#2e1a05]"> ​ into Action.</span>
+              <span className="text-[#2e1a05]"> into Action.</span>
             </RoughNotation>
           </h1>
           <p className="text-lg text-gray-400 mb-8 max-w-md mx-auto md:mx-0">

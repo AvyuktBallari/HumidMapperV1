@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 const companies = [
   {
     name: "Sample Garden",
-    linkname: "samplegarden",
+    linkname: "/map/home",
     description: "A demo house for testing",
   },
   {
@@ -51,8 +51,8 @@ const Maps = () => {
               <h2 className="text-xl font-semibold mb-2">{company.name}</h2>
               <p className="text-gray-400 mb-4">{company.description}</p>
               <p className="mb-4">Access ground, humidity, sensor and AI data.</p>
-              <a className="bg-white cursor-auto text-black hover:cursor-pointer font-semibold py-2 px-4 rounded" aria-disabled>
-                Coming Soon
+              <a href={company.linkname} className="bg-white cursor-auto text-black hover:cursor-pointer font-semibold py-2 px-4 rounded">
+                View Map
               </a>
             </div>
           ))}

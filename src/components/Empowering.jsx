@@ -8,7 +8,8 @@ function Empowering() {
             <h1 className='text-5xl lg:text-6xl mx-auto max-w-2xl text-[#cfcfcf] mt-5 text-center'>Empowering Agriculture Safety Everywhere</h1>
             <p className='text-lg text-center mt-5 mx-auto max-w-xl text-gray-400'>Climate change and water scarcity are straining agriculture.At HumidMapper, we use humidity sensors to map real-time moisture data, helping farmers optimize irrigation. Our technology promotes sustainable farming for a healthier planet.</p>
         
-            <div className='flex mt-10 flex-col lg:flex-row gap-5'>
+            <div className='flex mt-10 flex-col lg:flex-row gap-5 px-4 md:px-0'>
+
 
 
 
