@@ -1,4 +1,4 @@
-
+import logo from '../assets/icon.svg';
 const Footer = () => {
     return (
       <div className="relative mt-16 font-cute">
@@ -6,9 +6,13 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto flex sm:flex-row flex-col justify-between items-start">
             {/* Logo Section */}
             <div className="flex flex-col items-start mb-4">
-              <div className="flex items-center mb-4">
-
-                <h4 className="text-lg text-[#cfcfcf] font-semibold">HumidMapper</h4>
+            <div className="flex items-center mb-4">
+                <img
+                  src={logo}
+                  alt="Informatik Logo"
+                  className="rounded-lg cursor-pointer object-contain h-8"
+                />
+                <h4 className="ml-2 text-lg text-[#cfcfcf] font-semibold">HumidMapper</h4>
               </div>
               <div className="text-sm text-gray-400">Copyright © 2025</div>
               <div className="text-xs text-gray-400 mt-2">All rights reserved</div>

@@ -68,7 +68,7 @@ export default function Map() {
                         .attr('fill', 'white')
                         .text(`Humidity: ${strength.toFixed(2)}%`);
                 })
-                .on('mouseout', function() {
+                .on('mouseout', function(this: SVGCircleElement) {
                     d3.select(this).attr('r', 8);
                     svg.select('#tooltip').remove();
                 });

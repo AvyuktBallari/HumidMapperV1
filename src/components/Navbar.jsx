@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
+import logo from '../assets/icon.svg'
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -20,7 +21,12 @@ export default function Navbar() {
   return (
     <div className="bg-[#212121]">
       <nav className="flex items-center font-cute justify-between px-8 py-4 max-w-6xl mx-auto">
-        <a href="/" className="text-xl font-bold text-white">HumidMapper</a>
+      <div className="inline-flex items-center space-x-2">
+            <img src={logo} alt="VeganGrove" className="w-8 h-8 md:w-9 md:h-9 rounded-2xl" />
+            <a href="/" className="text-lg md:text-xl font-bold text-[#cfcfcf] shrink-0">
+              HumidMapper
+            </a>
+      </div>
 
         {/* Centered navigation links */}
         <div className="flex-grow flex justify-center">
