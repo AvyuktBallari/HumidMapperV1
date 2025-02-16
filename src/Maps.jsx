@@ -8,6 +8,12 @@ const companies = [
     linkname: "/map/tsafarm",
     description: "A demo house for testing",
   },
+  {
+    name: "Mandy's Garden",
+    linkname: "#",
+    description: "Coming Soon",
+    disabled: true,
+  }
 ]
 const Maps = () => {
   return (
@@ -46,8 +52,11 @@ const Maps = () => {
               <h2 className="text-xl font-semibold mb-2">{company.name}</h2>
               <p className="text-gray-400 mb-4">{company.description}</p>
               <p className="mb-4">Access ground, humidity, sensor and AI data.</p>
-              <a href={company.linkname} className="bg-white cursor-auto text-black hover:cursor-pointer font-semibold py-2 px-4 rounded">
-                View Map
+              <a 
+                href={company.linkname} 
+                className={`bg-white text-black font-semibold py-2 px-4 rounded ${company.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`}
+              >
+                {company.disabled ? "Coming Soon" : "View Map"}
               </a>
             </div>
           ))}

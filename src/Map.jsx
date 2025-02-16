@@ -11,6 +11,10 @@ function Map() {
     const [timeAgo, setTimeAgo] = useState(5);
     const { data: realData, fetchData } = useData(timeAgo, baseurl);
 
+    // Calculate time ago in hours
+    const hoursAgo = Math.floor(timeAgo / 60);
+    const minutesAgo = timeAgo % 60;
+
     return (
         <div>
             <Navbar />
@@ -28,11 +32,14 @@ function Map() {
 
                         <div className="bg-[#0f0f0f] border border-gray-900 rounded-lg max-w-2xl mx-auto mb-8">
                             <div className="p-6 flex flex-col h-full">
-                                <div className="flex items-center gap-2 text-emerald-400 mb-4">
-                                    <h3 className="font-semibold"></h3>
-                                </div>
-                                <div className="space-y-4 flex-grow flex flex-col justify-between ">
+                                <div className="space-y-4 flex-grow flex flex-col justify-between">
                                     <div>
+                                        {/* Time Ago Display */}
+                                        <p className="text-emerald-400 text-lg font-semibold text-center mb-2">
+                                            Viewing data from {hoursAgo === 0 ? 'Now' : `${hoursAgo} hours ago`}
+                                        </p>
+
+
                                         <input
                                             type="range"
                                             defaultValue="1440"
@@ -47,7 +54,6 @@ function Map() {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 
