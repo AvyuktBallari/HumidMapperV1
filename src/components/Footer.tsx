@@ -23,10 +23,9 @@ const Footer = () => {
                 <h5 className="text-sm font-semibold text-gray-300">Quick Links</h5>
                 <a className="text-xs sm:text-sm text-gray-400 hover:text-gray-500 transition-colors">LinkedIn</a>
                 <a className="text-xs sm:text-sm text-gray-400 hover:text-gray-500 transition-colors" href="#">About Us</a>
-                <a className="text-xs sm:text-sm text-gray-400 hover:text-gray-500 transition-colors" href="#">Contact</a>
+                <a className="text-xs sm:text-sm text-gray-400 hover:text-gray-500 transition-colors" href="/contact">Contact</a>
               </div>
   
-              {/* Contact Info Section */}
               <div className="flex flex-col space-y-4">
                 <h5 className="text-sm font-semibold text-gray-300">Contact</h5>
                 <p className="text-xs sm:text-sm text-gray-400">6030 Southard Trce Cumming GA 30040</p>

@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
           </p>
         
           <div className="flex flex-col gap-4 items-center md:items-start ">
-            <a href="/dashboard" className="bg-[#1aff9c] text-black font-bold hover:cursor-pointer  py-3 px-6 rounded-lg md:w-2/3 w-full text-center ">
+            <a href="/map" className="bg-[#1aff9c] text-black font-bold hover:cursor-pointer  py-3 px-6 rounded-lg md:w-2/3 w-full text-center ">
               Try it Out
             </a>
           </div>
