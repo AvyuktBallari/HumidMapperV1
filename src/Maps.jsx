@@ -5,13 +5,8 @@ import Footer from "./components/Footer";
 const companies = [
   {
     name: "Sample Garden",
-    linkname: "/map/home",
+    linkname: "/map/tsafarm",
     description: "A demo house for testing",
-  },
-  {
-    name: "Mandy's Garden",
-    linkname: "gardenstore",
-    description: "Real store demo",
   },
 ]
 const Maps = () => {
