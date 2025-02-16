@@ -9,10 +9,7 @@ import useData from './hooks/useData'
 
 function Map() {
   const { farm } = useParams()
-  const testData = [
-    { id: 1, busy: 100, x: 200, y: 401 },
-    { id: 1, busy: 100, x: 600, y: 200 },
-  ]
+
   const baseurl = 'https://plant.zayaan.adiavi.com/farms/' + farm + '/'
   const [timeAgo, setTimeAgo] = useState('24 Hours')
   const realData = useData(5, `${baseurl}room_data/`)
