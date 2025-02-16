@@ -1,8 +1,8 @@
 import * as d3 from 'd3';
 import { useEffect, useRef } from 'react';
-import backgroundImage from '../../assets/map.jpg'; // Adjust the path as necessary
+import backgroundImage from '../assets/map.jpg'; // Adjust the path as necessary
 
-export default function Map() {
+export default function Map({inputData}) {
     const mapRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -21,23 +21,24 @@ export default function Map() {
 
             const svg = d3.select(mapRef.current)
                 .append('svg')
-                .attr('width', width)
-                .attr('height', height);
+                .attr('width', '100%')
+                .attr('height', 'auto')
+                .attr('viewBox', `0 0 ${width} ${height}`);
 
             // Generate random data points with varying strengths
-            const data: [number, number, number][] = d3.range(30).map(() => [
-                Math.random() * width,
-                Math.random() * height,
-                Math.random() * 50 // Strength of each node
-            ] as [number, number, number]);
-
+            const processedData = inputData.map((d) => ({
+                x: d.x,
+                y: d.y,
+                strength: d.busy,
+            }));
+            console.log(processedData);
             // Create density data with strength affecting the spread
             const densityData = d3.contourDensity<[number, number, number]>()
-                .x(d => d[0])
-                .y(d => d[1])
-                .weight(d => d[2]) // Use strength as weight
+                .x(d => d.x)
+                .y(d => d.y)
+                .weight(d => d.strength) // Use strength as weight
                 .size([width, height])
-                .bandwidth(20)(data);
+                .bandwidth(40 )(processedData);
 
             // Create color scale
             const color = d3.scaleSequential(d3.interpolateViridis)
@@ -52,21 +53,21 @@ export default function Map() {
 
             // Append circles for each data point
             svg.selectAll('circle')
-                .data(data)
+                .data(processedData)
                 .enter().append('circle')
-                .attr('cx', d => d[0])
-                .attr('cy', d => d[1])
+                .attr('cx', d => d.x)
+                .attr('cy', d => d.y)
                 .attr('r', 8)
                 .attr('fill', 'gray')
                 .on('mouseover', function(this: SVGCircleElement, d) {
                     d3.select(this).attr('r', 10);
-                    const [x, y, strength] = d;
+                    console.log(d);
                     svg.append('text')
                         .attr('id', 'tooltip')
-                        .attr('x', x + 10)
-                        .attr('y', y - 10)
+                        .attr('x', d.x + 10)
+                        .attr('y', d.y - 10)
                         .attr('fill', 'white')
-                        .text(`Humidity: ${strength.toFixed(2)}%`);
+                        .text(`Humidity: ${d.strength.toFixed(2)}%`);
                 })
                 .on('mouseout', function(this: SVGCircleElement) {
                     d3.select(this).attr('r', 8);
@@ -76,7 +77,16 @@ export default function Map() {
     }, []);
 
     return (
-        <div className='object-cover' ref={mapRef} style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', position: 'relative' }}>
-        </div>
+        <div
+        className='object-cover'
+        ref={mapRef}
+        style={{
+          position: 'relative',
+          overflow: 'visible',
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover'
+        }}
+      >
+      </div>
     );
 }

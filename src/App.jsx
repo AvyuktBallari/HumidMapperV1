@@ -14,7 +14,7 @@ const App = () => {
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="/map" element={<Maps />} />
-                <Route path="/map/home" element={<Map />} />
+                <Route path="/map/:farm" element={<Map />} />
                 <Route path="/contact" element={<ContactSection />} />
               </Routes>
             </BrowserRouter>
